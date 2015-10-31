@@ -9,6 +9,6 @@ RUN bundle install --jobs 4 --deployment --without test development
 
 ADD . /webapp/
 
-CMD ["/bin/bash", "bundle", "exec", "foreman", "s"]
+CMD ["./runner"]
 
 EXPOSE 3000

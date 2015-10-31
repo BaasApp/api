@@ -32,7 +32,7 @@ class BeerTender < ActiveRecord::Base
   end
 
   def updates_json
-    ordered_updates.map { |update| update.data }
+    ordered_updates.limit(10).map(&:data)
   end
 
   def last_update_json

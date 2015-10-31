@@ -44,6 +44,8 @@ GEM
     clockwork (1.2.0)
       activesupport
       tzinfo
+    commander (4.3.5)
+      highline (~> 1.7.2)
     daemons (1.2.3)
     debug_inspector (0.0.2)
     domain_name (0.5.25)
@@ -54,6 +56,10 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    highline (1.7.8)
+    houston (2.2.3)
+      commander (~> 4.1)
+      json
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -141,6 +147,7 @@ DEPENDENCIES
   byebug
   clockwork
   foreman
+  houston
   jbuilder (~> 2.0)
   pg
   rails (= 4.2.1)

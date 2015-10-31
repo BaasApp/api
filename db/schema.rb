@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030225345) do
+ActiveRecord::Schema.define(version: 20151031202343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,5 +47,23 @@ ActiveRecord::Schema.define(version: 20151030225345) do
 
   add_index "tenders", ["device_id"], name: "index_tenders_on_device_id", unique: true, using: :btree
 
+  create_table "user_updates", force: :cascade do |t|
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "user_updates", ["user_id"], name: "index_user_updates_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "push_register_id"
+  end
+
   add_foreign_key "beer_tender_updates", "beer_tenders"
+  add_foreign_key "user_updates", "users"
 end

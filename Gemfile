@@ -17,6 +17,8 @@ gem 'clockwork'
 
 gem 'foreman'
 
+gem 'houston'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

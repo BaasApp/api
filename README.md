@@ -1,5 +1,5 @@
-# BikeLockAPI
+# BeerCompassAPI
 
-OpenAlarmTeam Bike Lock API
+BearCompassAPI
 
 More to come....
