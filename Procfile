@@ -1,2 +1,2 @@
-web: bundle exec spring rails s
+web: bundle exec rails s
 clock: bundle exec clockwork clock.rb

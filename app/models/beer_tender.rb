@@ -13,6 +13,24 @@ class BeerTender < ActiveRecord::Base
     end
   end
 
+  def index_json
+    {
+      id: id,
+      name: name,
+      avatar_url: avatar_url,
+      last_update: last_update_json,
+    }
+  end
+
+  def show_json
+    {
+      id: id,
+      name: name,
+      avatar_url: avatar_url,
+      updates: updates_json,
+    }
+  end
+
   def updates_json
     ordered_updates.map { |update| update.data }
   end
