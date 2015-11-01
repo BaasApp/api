@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user.update_health!
+    # @user.update_health!
 
     render json: {
       id: @user.id,

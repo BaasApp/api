@@ -22,18 +22,18 @@ class User < ActiveRecord::Base
   end
 
   def health_auth!(email, password)
-    return unless health_email.nil?
+    # return unless health_email.nil?
 
-    User.where(health_email: email).map(&:clear_health_credentials)
+    # User.where(health_email: email).map(&:clear_health_credentials)
 
-    data = Health.auth(email, password)
-    self.health_email = email
-    self.health_password = password
-    self.health_access_token = data["access_token"]
-    self.health_refresh_token = data["refresh_token"]
-    self.health_token_type = data["token_type"]
-    self.health_user_id = data["userID"]
-    self.save!
+    # data = Health.auth(email, password)
+    # self.health_email = email
+    # self.health_password = password
+    # self.health_access_token = data["access_token"]
+    # self.health_refresh_token = data["refresh_token"]
+    # self.health_token_type = data["token_type"]
+    # self.health_user_id = data["userID"]
+    # self.save!
   end
 
   def update_health!
