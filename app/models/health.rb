@@ -17,10 +17,9 @@ class Health
   end
 
   def observations(start_date=nil)
-    tries ||= 1
     start_date ||= 8.hours.ago
     start_time = start_date.strftime("%FT%R")
-    end_time = Date.today.strftime("%FT%R")
+    end_time = Time.now.utc.strftime("%FT%R")
 
     url =  "#{API_URL}/fhir/Observation?patient.id=#{@user.health_user_id}"
     url << "&type=calories"

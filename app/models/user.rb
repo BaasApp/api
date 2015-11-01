@@ -35,6 +35,8 @@ class User < ActiveRecord::Base
   def update_health!
     return unless health_access_token
 
+    tries ||= 1
+
     self.calories = health_client.calories
     self.save!
   rescue RestClient::Forbidden => e
