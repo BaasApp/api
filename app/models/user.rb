@@ -5,11 +5,6 @@ class User < ActiveRecord::Base
     order("created_at DESC").map(&:json_data)
   end
 
-  def calories
-    update_health!
-    super
-  end
-
   def json_data
     {
       id: id,

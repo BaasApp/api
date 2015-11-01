@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user.update_health!
+
     render json: {
       id: @user.id,
       name: @user.name,
@@ -24,6 +26,7 @@ class UsersController < ApplicationController
 
   def health
     @user.health_auth!(params[:email], params[:password])
+
     show
   end
 

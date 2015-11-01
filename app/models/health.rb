@@ -1,6 +1,10 @@
 class Health
   API_URL = "https://www.measuretomotivate.philips.com/api"
 
+  def initialize(user)
+    @user = user
+  end
+
   def self.auth(email, password)
     auth_data = { username: email, password: password }
 
@@ -8,12 +12,8 @@ class Health
     JSON.parse(result)
   end
 
-  def initialize(user)
-    @user = user
-  end
-
   def calories(start_date=nil)
-    observations["entry"].first["content"]["valueQuantity"]["value"]
+    observations(start_date)["entry"].first["content"]["valueQuantity"]["value"]
   end
 
   def observations(start_date=nil)
