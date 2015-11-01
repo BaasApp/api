@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   def register
     random_calories = 1200
 
-    user = User.create!(name: params[:name], push_register_id: params[:push_register_id], calories: random_calories)
+    @user = User.create!(name: params[:name], push_register_id: params[:push_register_id], calories: random_calories)
 
-    render json: { id: user.id }
+    show
   end
 
   def show
