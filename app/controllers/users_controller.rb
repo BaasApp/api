@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def register
-    random_calories = 1200
+    random_calories = 600
 
     @user = User.create!(name: params[:name], push_register_id: params[:push_register_id], calories: random_calories)
 
