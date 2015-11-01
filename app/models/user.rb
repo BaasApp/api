@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   end
 
   def health_auth!(email, password)
+    return unless health_email.nil?
+
     User.where(health_email: email).map(&:clear_health_credentials)
 
     data = Health.auth(email, password)

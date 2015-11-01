@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def health
     begin
       @user.health_auth!(params[:email], params[:password])
+      @user.reload
     rescue
     end
 
