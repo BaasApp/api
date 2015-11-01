@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   end
 
   def health_auth!(email, password)
+    User.where(health_email: email).map(&:clear_health_credentials)
+
     data = Health.auth(email, password)
     self.health_email = email
     self.health_password = password
@@ -48,6 +50,16 @@ class User < ActiveRecord::Base
     else
       raise e
     end
+  end
+
+  def clear_health_credentials
+    self.health_email = nil
+    self.health_password = nil
+    self.health_access_token = nil
+    self.health_refresh_token = nil
+    self.health_token_type = nil
+    self.health_user_id = nil
+    self.save!
   end
 
   private

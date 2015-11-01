@@ -27,6 +27,7 @@ class Health
     url << "&end=#{end_time}"
 
     result = RestClient.get(url, api_options)
+
     JSON.parse(result)
   end
 
