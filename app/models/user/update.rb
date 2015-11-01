@@ -2,7 +2,7 @@ class User::Update < ActiveRecord::Base
   belongs_to :user
 
   def self.json_collection
-    where('created_at > ?', 30.minutes.ago).order("created_at DESC").limit(10).map(&:json_data)
+    where('created_at > ?', 30.minutes.ago).order("created_at DESC").limit(10)
   end
 
   def json_data

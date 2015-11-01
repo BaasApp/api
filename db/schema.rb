@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031202343) do
+ActiveRecord::Schema.define(version: 20151101021239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,9 +59,18 @@ ActiveRecord::Schema.define(version: 20151031202343) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "push_register_id"
+    t.integer  "beer_count",           default: 0
+    t.integer  "wallet_amount",        default: 0
+    t.integer  "calories",             default: 0
+    t.string   "health_access_token"
+    t.string   "health_refresh_token"
+    t.string   "health_token_type"
+    t.string   "health_user_id"
+    t.string   "health_email"
+    t.string   "health_password"
   end
 
   add_foreign_key "beer_tender_updates", "beer_tenders"

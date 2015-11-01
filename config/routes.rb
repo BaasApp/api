@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get 'users' => 'users#index'
   post 'users' => 'users#register'
+  post 'users/:id/health' => 'users#health'
+  get 'users/:id' => 'users#show'
+  post 'users/:id/beer' => 'users#beer'
   post 'users/:id/update' => 'users#update'
   get 'users/:id/push' => 'users#push'
 end

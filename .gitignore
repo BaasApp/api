@@ -35,3 +35,4 @@ bower.json
 .powenv
 
 config/push_notifications.*
+deploy.sh
